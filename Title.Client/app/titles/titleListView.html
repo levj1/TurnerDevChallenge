@@ -1,0 +1,25 @@
+﻿<div class="panel panel-primary"
+     ng-controller="TitleListCtrl as vm">
+    <div class="panel-heading"
+         style="font-size:large">
+        Title List
+    </div>
+
+    <div class="panel-body">
+        <table class="table">
+
+            <thead>
+                <tr>
+                    <td>Title Name</td>
+                    <td>Release Year</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="title in vm.titles">
+                    <td>{{ title.titleName}}</td>
+                    <td>{{ title.releaseYear }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
