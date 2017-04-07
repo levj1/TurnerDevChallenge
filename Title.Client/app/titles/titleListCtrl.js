@@ -9,7 +9,7 @@
     function TitleListCtrl(titleResource) {
         var vm = this;
 
-        vm.searchTitle = "All";
+        //vm.searchTitle = "All";
 
         titleResource.query({search: vm.searchTitle}, function (data) {
             vm.titles = data;

@@ -6,18 +6,27 @@
     </div>
 
     <div class="panel-body">
-        <table class="table">
+        <table class="table-responsive">
 
             <thead>
                 <tr>
-                    <td>Title Name</td>
-                    <td>Release Year</td>
+                    <td>Title Name </td>
                 </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="title in vm.titles">
-                    <td>{{ title.titleName}}</td>
-                    <td>{{ title.releaseYear }}</td>
+                <tr><td>Search: <input type="text" ng-model="searchIt" /></td></tr>
+                <tr ng-repeat="title in vm.titles | filter: searchIt">
+                    <td>
+                        <a href="#" ng-click="showDetails = ! showDetails">{{ title.titleName}}</a>
+                        <div class="procedure-details" ng-show="showDetails">
+                            <h5>Movie Details</h5>
+                            <ul>
+                                <li>Name - {{title.titleName}}</li>
+                                <li>Released Year - {{title.releaseYear}}</li>
+                                <li>Processed Date - {{title.processedDateTimeUTC | date: timezone}}</li>
+                            </ul>
+                        </div>
+                    </td>
                 </tr>
             </tbody>
         </table>

@@ -6,6 +6,6 @@
         .constant("appSettings",
         {
             // url for accessing API
-            serverPath: "http://localhost:64370/"
+            serverPath: "http://localhost:51346/"
         });
 }());
